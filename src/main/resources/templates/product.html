@@ -2,14 +2,16 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
-	<title>Spring Framework Guru - Course Name</title>
+	<title th:text="#{index.page.title}">Product Page Title</title>
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet"
 	      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
 	      th:href="@{/webjars/bootstrap/4.1.1/css/bootstrap.min.css}">
 
-	<style>
+	<link rel="stylesheet" href="" th:href="@{/css/custom.css}" >
+
+	<style th:remove="all">
 		.jumbotron {
 			background: url('https://d2vvqscadf4c1f.cloudfront.net/rGIBmJUAT46UuLPwXo3K_Fedora_Core_Ultimate2.jpg') no-repeat center center;
 			height: 350px;
@@ -133,7 +135,7 @@
 <div class="jumbotron">
 	<div class="container">
 		<h1>Spring Framework Guru</h1>
-		<p class="lead">Online Courses for Spring Framework</p>
+		<p class="lead" th:text="#{index.courses.tagline}">Tag Line</p>
 	</div>
 </div>
 
@@ -147,7 +149,8 @@
 
 	<div class="row">
 		<div class="col">
-			<img src="https://d2vvqscadf4c1f.cloudfront.net/scgeIJ9wRGGNWvK0jAld_ThumbFREE_01.png"
+			<img src="../static/images/SpringIntroThumb.png"
+			     th:src="@{images/SpringIntroThumb.png}"
 			     class="center-block">
 		</div>
 		<div class="col">
@@ -176,7 +179,7 @@
 
 	<div class="row">
 		<div class="col-4 offset-4">
-			<button class="btn-success" style="margin:0 auto;">Buy Now!</button>
+			<button class="btn-success" style="margin:0 auto;" th:text="#{product.btn.buynow}">Buy Now!</button>
 		</div>
 	</div>
 </div>
