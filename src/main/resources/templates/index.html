@@ -5,7 +5,7 @@
 	<title th:text="#{index.page.title}">Page Title</title>
 
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	<link rel="stylesheet" href="../static/css/bootstrap-4.1.1-dist/bootstrap.min.css"
 	      th:href="@{/css/bootstrap-4.1.1-dist/bootstrap.min.css}">
 
 	<link rel="stylesheet" href="" th:href="@{/css/custom.css}" >
@@ -113,8 +113,9 @@
 
 </head>
 <body>
-<div class="jumbotron">
-	<div class="container">
+
+<div class="container" th:replace="fragments/jumbotron :: jumbotron">
+	<div class="jumbotron">
 		<h1>Spring Framework Guru</h1>
 		<p class="lead" th:text="#{index.courses.tagline}">Tag Line</p>
 	</div>
@@ -358,6 +359,15 @@
 		</div>
 	</div>
 </div>
+
+<div class="container" th:replace="fragments/jumbotron :: footer">
+	<nav class="navbar navbar-expand-sm fixed-bottom justify-content-center">
+		<div class="navbar-nav">
+			<div class="navbar-item">Page Footer</div>
+		</div>
+	</nav>
+</div>
+
 
 <!-- Bootstrap 4.1.1 -->
 <!-- Optional JavaScript -->
