@@ -147,10 +147,10 @@
 		</div>
 	</div>
 
-	<div class="row">
+	<div class="row course-listing">
 		<div class="col">
 			<div class="row">
-				<div class="col">
+				<div class="col-12">
 					<img src="../static/images/SpringIntroThumb.png"
 					     th:src="@{'/images/' + ${product.imageUrl}}">
 				</div>
@@ -168,7 +168,7 @@
 				</div>
 				<div class="col-4">
 					<div class="small course-price"
-					     th:text="${product.price}">
+					     th:text="${product.price > 0 ? '$' + product.price : 'Free'}">
 						$PRICE
 					</div>
 				</div>
