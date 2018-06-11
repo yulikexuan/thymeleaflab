@@ -4,16 +4,27 @@
 package com.yulikexuan.thymeleaflab.controllers;
 
 
+import com.yulikexuan.thymeleaflab.services.IProductService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
 public class IndexController {
 
-	@RequestMapping("/")
-	public String getIndex() {
+	private final IProductService productService;
 
+	@Autowired
+	public IndexController(IProductService productService) {
+		this.productService = productService;
+	}
+
+	@RequestMapping("/")
+	public String getIndex(Model model) {
+
+		model.addAttribute("products", this.productService.getProducts());
 		return "index";
 	}
 

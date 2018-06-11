@@ -7,7 +7,6 @@ package com.yulikexuan.thymeleaflab.services;
 import com.yulikexuan.thymeleaflab.domain.Product;
 import org.springframework.stereotype.Service;
 
-import javax.xml.ws.ServiceMode;
 import java.util.*;
 
 
@@ -22,7 +21,7 @@ public class ProductService implements IProductService {
 	}
 
 	@Override
-	public List<Product> listProducts() {
+	public List<Product> getProducts() {
 		return Collections.unmodifiableList(
 				new ArrayList<>(this.productMap.values()));
 	}

@@ -12,7 +12,7 @@ import java.util.List;
 public interface IProductService {
 
 	Product getProduct(Long id);
-	List<Product> listProducts();
+	List<Product> getProducts();
 	int getProductCount();
 	void addProduct(Product product);
 
