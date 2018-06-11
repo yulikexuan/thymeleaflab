@@ -23,4 +23,8 @@ public class Product {
 	private List<ProductCategory> productCategories = new ArrayList<>();
 	private String imageUrl;
 
+	public String getAuthorFullName() {
+		return this.author.getFullName();
+	}
+
 }///:~

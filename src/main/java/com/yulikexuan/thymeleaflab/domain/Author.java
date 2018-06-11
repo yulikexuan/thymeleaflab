@@ -15,4 +15,8 @@ public class Author {
 	private String lastName;
 	private String image;
 
+	public String getFullName() {
+		return this.firstName + "" + this.lastName;
+	}
+
 }///:~

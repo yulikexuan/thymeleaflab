@@ -111,7 +111,6 @@ public class Bootstrap implements CommandLineRunner {
 		springIntro.getProductCategories().add(springBootCat);
 		this.productService.addProduct(springIntro);
 
-
 		Product springCoreUltimate = new Product();
 		springCoreUltimate.setId(2L);
 		springCoreUltimate.setCourseName("Spring Core Ultimate");
@@ -246,7 +245,7 @@ public class Bootstrap implements CommandLineRunner {
 				"run into errors. So don't worry, I have the complete source " +
 				"code examples in Git for you to checkout and use.");
 		springCoreAdv.setPrice(new BigDecimal("199"));
-		springCoreAdv.setImageUrl("SpringCoreAdvanced.png");
+		springCoreAdv.setImageUrl("SpringCoreAdvancedThumb.png");
 		springCoreAdv.getProductCategories().add(springCoreCat);
 		springCoreAdv.getProductCategories().add(springBootCat);
 		this.productService.addProduct(springCoreAdv);
@@ -282,7 +281,7 @@ public class Bootstrap implements CommandLineRunner {
 				"into errors. So don't worry, I have the complete source " +
 				"code examples in Git for you to checkout and use.");
 		springCoreDevOps.setPrice(new BigDecimal("199"));
-		springCoreDevOps.setImageUrl("SpringCoreDevOps.png");
+		springCoreDevOps.setImageUrl("SpringCoreDevOpsThumb.png");
 		springCoreDevOps.getProductCategories().add(springCoreCat);
 		springCoreDevOps.getProductCategories().add(springBootCat);
 		this.productService.addProduct(springCoreDevOps);
