@@ -27,9 +27,9 @@ public class CheckoutController {
 	public String doCheckout(@Valid CheckoutCommand checkoutCommand,
 	                         BindingResult bindingResult) {
 
-//		if (bindingResult.hasErrors()) {
-//			return "checkoutform";
-//		}
+		if (bindingResult.hasErrors()) {
+			return "checkoutform";
+		}
 
 		return "checkoutcomplete";
 	}
