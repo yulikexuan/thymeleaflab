@@ -151,6 +151,15 @@
 		<div class="col">
 			<div th:replace="fragments/productdiv :: productdiv">
 			</div>
+			<div class="container">
+				<div class="row">
+					<ol class="breadcrumb" th:each="category:${product.productCategories}">
+						<li><a th:text="${category.category}" href="#">Cat 1</a></li>
+						<li><a href="#" th:remove="all">Cat 2</a></li>
+						<li><a href="#" th:remove="all">Cat 3</a></li>
+					</ol>
+				</div>
+			</div>
 		</div>
 		<div class="col">
 			<div>
