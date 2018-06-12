@@ -149,29 +149,7 @@
 
 	<div class="row course-listing">
 		<div class="col">
-			<div class="row">
-				<div class="col-12">
-					<img src="../static/images/SpringIntroThumb.png"
-					     th:src="@{'/images/' + ${product.imageUrl}}">
-				</div>
-			</div>
-			<div class="row course-listing-extra-info">
-				<div class="col-8">
-					<img align="left" alt="John Thompson"
-					     src="../static/images/instructor_jt.jpg"
-					     th:src="@{'/images/'+${product.author.image}}"
-					     class="img-circle"/>
-					<div class="course-author-name"
-					     th:text="${product.authorFullName}">
-						Author Name
-					</div>
-				</div>
-				<div class="col-4">
-					<div class="small course-price"
-					     th:text="${product.price > 0 ? '$' + product.price : 'Free'}">
-						$PRICE
-					</div>
-				</div>
+			<div th:replace="fragments/productdiv :: productdiv">
 			</div>
 		</div>
 		<div class="col">

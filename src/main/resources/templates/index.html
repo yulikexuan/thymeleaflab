@@ -129,7 +129,41 @@
 		</div>
 	</div>
 
-	<table>
+	<!-- Iteration Status Variables
+		Thymeleaf also enables a useful mechanism to keep track of the
+		iteration process via the status variable.
+		The status variable provides the following properties:
+			- index: the current iteration index, starting with 0 (zero)
+			- count: the number of elements processed so far
+			- size: the total number of elements in the list
+			- even/odd: checks if the current iteration index is even or odd
+			- first:  checks if the current iteration is the first one
+			- last: checks if the current iteration is the last one
+	-->
+
+	<!--
+		gt (>), lt (<), ge (>=), le (<=), not (!). Also eq (==), neq/ne (!=).
+	-->
+
+	<div class="row course-list list">
+		<div class="col-4" th:each="product, iStatus : ${products}">
+			<div th:if="${(iStatus.count gt 0) and (iStatus.count lt 4)}">
+				<div th:replace="fragments/productdiv :: productdiv">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row course-list list">
+		<div class="col-4" th:each="product, iStatus : ${products}">
+			<div th:if="${(iStatus.count gt 3 and iStatus.count lt 7)}">
+				<div th:replace="fragments/productdiv :: productdiv">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<table th:remove="all">
 		<tr>
 			<th>ID</th>
 			<th>Name</th>
@@ -139,7 +173,6 @@
 			<td th:text="${product.courseName}"></td>
 		</tr>
 	</table>
-
 	<div class="row course-list list" th:remove="all">
 		<div class="col">
 			<div class="course-listing">
@@ -255,7 +288,6 @@
 			</div>
 		</div>
 	</div>
-
 	<div class="row" th:remove="all">
 		<div class="col">
 			<div class="course-listing">
@@ -369,6 +401,7 @@
 			</div>
 		</div>
 	</div>
+
 </div>
 
 <div class="container" th:replace="fragments/jumbotron :: footer">

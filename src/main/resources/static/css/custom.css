@@ -50,7 +50,7 @@ body {
 }
 
 .course-listing .course-box-image-container {
-	max-height: 208px;
+	height: auto;
 	overflow: hidden;
 }
 
