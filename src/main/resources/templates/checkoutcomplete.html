@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
-	<title>Checkout completed!</tit
+	<title>Checkout completed!</title>
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="../static/css/bootstrap-4.1.1-dist/bootstrap.min.css"
 		      th:href="@{/css/bootstrap-4.1.1-dist/bootstrap.min.css}">
@@ -108,11 +108,15 @@
 				font-weight: 200;
 				line-height: 30px;
 			}
-		</style>le>
+		</style>
 </head>
 <body>
 
-	<p>Checkout has been completed!</p>
+<div class="container">
+	<div class="jumbotron">
+		<h2>Thank You for Your Order!!</h2>
+	</div>
+</div>
 
 
 	<!-- Bootstrap 4.1.1 -->
