@@ -123,23 +123,77 @@
 		      th:action="@{/docheckout}"
 		      method="post">
 
+			<!--
+			    #fields object:
+			      - #fields.hasErrors(...) function receives the field
+			        expression as a parameter,  like 'firstName' or '*', and
+			        returns a boolean telling whether any validation errors
+			        exist for that field or any field
+			-->
 			<div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
 				<div th:text="#{checkoutCommand.hasErrors}">Error Message</div>
 			</div>
 
-			<div class="form-group">
+			<div class="form-group" th:class="${#fields.hasErrors('firstName')} ?
+			                                  'form-group has-error' : 'form-group'">
 				<label class="control-label">First Name:</label>
-				<input type="text" class="form-control" th:field="*{firstName}"/>
+				<!--
+				    th:field attributes must be selection expressions (*{...}),
+				    The asterisk syntax evaluates expressions on selected
+				    objects rather than on the whole context
+
+				    A selected object is the result of an expression using the
+				    th:object attribute, like th:object="${checkoutCommand}"
+
+				    Setting a CSS class to a form input if that field has
+				    errors, is so common that Thymeleaf offers a specific
+				    attribute for doing exacly that: th:errorclass:
+                    Applied to a form field tag (input, select, textarea…), it
+                    will read the name of the field to be examined from any
+                    existing name or th:field attributes in the same tag, and
+                    then append the specified CSS class to the tag if such
+                    field has any associated errors
+				-->
+				<input type="text" class="form-control" th:field="*{firstName}"
+				       th:errorclass="is-invalid"/>
+				<span class="help-block invalid-feedback"
+				      th:if="${#fields.hasErrors('firstName')}">
+					<ul>
+						<div th:each="err : ${#fields.errors('firstName')}">
+                            <li th:text="${err}">Error message</li>
+						</div>
+					</ul>
+				</span>
 			</div>
 
-			<div class="form-group">
+			<div class="form-group" th:class="${#fields.hasErrors('lastName')} ?
+			                                  'form-group has-error' : 'form-group'">
 				<label class="control-label">Last Name:</label>
-				<input type="text" class="form-control" th:field="*{lastName}"/>
+				<input type="text" class="form-control" th:field="*{lastName}"
+				       th:errorclass="is-invalid"/>
+				<span class="help-block invalid-feedback"
+				      th:if="${#fields.hasErrors('lastName')}">
+					<ul>
+						<div th:each="err : ${#fields.errors('lastName')}">
+                            <li th:text="${err}">Error message</li>
+						</div>
+					</ul>
+				</span>
 			</div>
 
-			<div class="form-group">
+			<div class="form-group" th:class="${#fields.hasErrors('addressLine1')} ?
+			                                  'form-group has-error' : 'form-group'">
 				<label class="control-label">Address Line 1:</label>
-				<input type="text" class="form-control" th:field="*{addressLine1}"/>
+				<input type="text" class="form-control" th:field="*{addressLine1}"
+				       th:errorclass="is-invalid"/>
+				<span class="help-block invalid-feedback"
+				      th:if="${#fields.hasErrors('addressLine1')}">
+					<ul>
+						<div th:each="err : ${#fields.errors('addressLine1')}">
+                            <li th:text="${err}">Error message</li>
+						</div>
+					</ul>
+				</span>
 			</div>
 
 			<div class="form-group">
@@ -147,19 +201,49 @@
 				<input type="text" class="form-control" th:field="*{addressLine2}"/>
 			</div>
 
-			<div class="form-group">
+			<div class="form-group" th:class="${#fields.hasErrors('city')} ?
+			                                  'form-group has-error' : 'form-group'">
 				<label class="control-label">City:</label>
-				<input type="text" class="form-control" th:field="*{city}"/>
+				<input type="text" class="form-control" th:field="*{city}"
+				       th:errorclass="is-invalid"/>
+				<span class="help-block invalid-feedback"
+				      th:if="${#fields.hasErrors('city')}">
+					<ul>
+						<div th:each="err : ${#fields.errors('city')}">
+                            <li th:text="${err}">Error message</li>
+						</div>
+					</ul>
+				</span>
 			</div>
 
-			<div class="form-group">
+ 	 		<div class="form-group" th:class="${#fields.hasErrors('stateCode')} ?
+			                                  'form-group has-error' : 'form-group'">
 				<label class="control-label">State Code:</label>
-				<input type="text" class="form-control" th:field="*{stateCode}"/>
+				<input type="text" class="form-control" th:field="*{stateCode}"
+				       th:errorclass="is-invalid"/>
+				<span class="help-block invalid-feedback"
+				      th:if="${#fields.hasErrors('stateCode')}">
+					<ul>
+						<div th:each="err : ${#fields.errors('stateCode')}">
+                            <li th:text="${err}">Error message</li>
+						</div>
+					</ul>
+				</span>
 			</div>
 
-			<div class="form-group">
+			<div class="form-group" th:class="${#fields.hasErrors('zipCode')} ?
+			                                  'form-group has-error' : 'form-group'">
 				<label class="control-label">Zip Code:</label>
-				<input type="text" class="form-control" th:field="*{zipCode}"/>
+				<input type="text" class="form-control" th:field="*{zipCode}"
+				       th:errorclass="is-invalid"/>
+				<span class="help-block invalid-feedback"
+				      th:if="${#fields.hasErrors('zipCode')}">
+					<ul>
+						<div th:each="err : ${#fields.errors('zipCode')}">
+                            <li th:text="${err}">Error message</li>
+						</div>
+					</ul>
+				</span>
 			</div>
 
 			<br>

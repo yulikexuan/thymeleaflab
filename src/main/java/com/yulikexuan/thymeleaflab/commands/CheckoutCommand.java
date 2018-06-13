@@ -24,6 +24,7 @@ public class CheckoutCommand {
 	@NotEmpty
 	@Size(min = 2, max = 50)
 	private String addressLine1;
+
 	private String addressLine2;
 
 	@NotEmpty
