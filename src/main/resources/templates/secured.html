@@ -121,6 +121,7 @@
 		</div>
 		<div class="row" sec:authorize="isAuthenticated()">
 			<div class="col-10 offset-2">
+				<h3 class="text-info" sec:authentication="principal.username">Username</h3>
 				<h2 class="text-primary">User is Logged In</h2>
 			</div>
 		</div>
@@ -131,13 +132,13 @@
 			</div>
 		</div>
 
-		<div class="row" sec:authorize="isAuthenticated()">
+		<div class="row" sec:authorize="hasRole('ROLE_ADMIN')">
 			<div class="col-10 offset-2">
 				<h2>User Has Role Admin</h2>
 			</div>
 		</div>
 
-		<div class="row" sec:authorize="isAuthenticated()">
+		<div class="row" sec:authorize="hasRole('ROLE_USER')">
 			<div class="col-10 offset-2">
 				<h2>User Has Role User</h2>
 			</div>
