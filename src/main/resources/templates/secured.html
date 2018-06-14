@@ -114,42 +114,43 @@
 <body>
 
 	<div class="container" style="height: 100vh;">
-		<div class="row" sec>
+		<div class="row">
 			<div class="col-12">
 				<h1>Spring Security Demo</h1>
 			</div>
 		</div>
-
-		<div class="row">
+		<div class="row" sec:authorize="isAuthenticated()">
 			<div class="col-10 offset-2">
-				<h2>User is Logged In</h2>
+				<h2 class="text-primary">User is Logged In</h2>
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row" sec:authorize="!isAuthenticated()">
 			<div class="col-10 offset-2">
-				<h2>User is Logged Out</h2>
+				<h2 class="text-danger">User is Logged Out</h2>
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row" sec:authorize="isAuthenticated()">
 			<div class="col-10 offset-2">
 				<h2>User Has Role Admin</h2>
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row" sec:authorize="isAuthenticated()">
 			<div class="col-10 offset-2">
 				<h2>User Has Role User</h2>
 			</div>
 		</div>
 	</div>
-	<div class="container" th:replace="fragments/footer :: footer">
-		<p>footer</p>
+
+	<div class="container" th:replace="fragments/jumbotron :: footer">
+		<nav class="navbar navbar-expand-sm fixed-bottom justify-content-center">
+			<div class="navbar-nav">
+				<div class="navbar-item">Page Footer</div>
+			</div>
+		</nav>
 	</div>
-
-</body>
-
 
 	<!-- Bootstrap 4.1.1 -->
 	<!-- Optional JavaScript -->
