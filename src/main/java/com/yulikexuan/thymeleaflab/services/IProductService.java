@@ -11,9 +11,12 @@ import java.util.List;
 
 public interface IProductService {
 
-	Product getProduct(Long id);
-	List<Product> getProducts();
-	int getProductCount();
-	void addProduct(Product product);
+    Product getProduct(Long id);
+
+    List<Product> getProducts();
+
+    int getProductCount();
+
+    void addProduct(Product product);
 
 }///:~

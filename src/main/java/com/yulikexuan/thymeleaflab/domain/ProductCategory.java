@@ -10,7 +10,7 @@ import lombok.Data;
 @Data
 public class ProductCategory {
 
-	private Long id;
-	private String category;
+    private Long id;
+    private String category;
 
 }///:~

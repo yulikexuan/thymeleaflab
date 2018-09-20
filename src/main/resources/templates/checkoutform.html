@@ -1,272 +1,290 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="UTF-8">
-	<title>Checkout form</title>
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="../static/css/bootstrap-4.1.1-dist/bootstrap.min.css"
-	      th:href="@{/css/bootstrap-4.1.1-dist/bootstrap.min.css}">
+    <meta charset="UTF-8">
+    <title>Checkout form</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet"
+          href="../static/css/bootstrap-4.1.1-dist/bootstrap.min.css"
+          th:href="@{/css/bootstrap-4.1.1-dist/bootstrap.min.css}">
 
-	<link rel="stylesheet" href="" th:href="@{/css/custom.css}" >
+    <link rel="stylesheet" href="" th:href="@{/css/custom.css}">
 
-	<style th:remove="all">
-		.jumbotron {
-			background: url('https://d2vvqscadf4c1f.cloudfront.net/rGIBmJUAT46UuLPwXo3K_Fedora_Core_Ultimate2.jpg') no-repeat center center;
-			height: 350px;
-			color: white;
-			text-shadow: #444 0 1px 1px;
-		}
-		body {
-			color: #2b3636;
-			font-family: "Proxima";
-		}
-		body {
-			color: #333;
-			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-			font-size: 14px;
-			line-height: 1.42857;
-		}
-		.row {
-			margin-left: -15px;
-			margin-right: -15px;
-		}
-		*::before, *::after {
-			box-sizing: border-box;
-		}
-		*::before, *::after {
-			box-sizing: border-box;
-		}
-		.view-directory .course-listing {
-			background-color: rgba(255, 255, 255, 0.7);
-		}
-		.course-listing {
-			background-color: #f7f7f7;
-			border: 1px solid #f1f3f0;
-			border-radius: 9px;
-			box-shadow: 0 1px #f1f3f0;
-			cursor: pointer;
-			height: 390px;
-			margin-bottom: 50px;
-			padding: 0;
-		}
-		* {
-			box-sizing: border-box;
-		}
-		.course-listing .course-box-image-container {
-			max-height: 208px;
-			overflow: hidden;
-		}
-		.course-listing .course-box-image-container .course-box-image {
-			border-bottom: 1px solid #ededed;
-			border-top-left-radius: 9px;
-			border-top-right-radius: 9px;
-			display: block;
-			margin: auto;
-			width: 100%;
-		}
-		img {
-			vertical-align: middle;
-		}
-		img {
-			border: 0 none;
-		}
-		.course-listing .course-listing-title {
-			color: #6cb44a;
-			font-size: 18px;
-			font-weight: bold;
-			line-height: 25px;
-			max-height: 70px;
-			overflow: hidden;
-			padding: 16px 16px 4px;
-		}
-		.course-listing .course-listing-subtitle {
-			color: #586f6f;
-			font-size: 14px;
-			font-weight: 200;
-			max-height: 65px;
-			overflow: hidden;
-			padding: 5px 16px;
-		}
-		.course-listing .course-listing-extra-info .course-price {
-			color: #6eae50 !important;
-			font-size: 15px;
-			font-weight: bold;
-			line-height: 34px;
-			padding-right: 10px;
-			text-align: right;
-		}
-		.course-listing .course-listing-extra-info .course-author-name {
-			font-size: 15px;
-			font-weight: 200;
-			line-height: 30px;
-			max-height: 30px;
-			overflow: hidden;
-			padding-left: 5px;
-		}
-		.course-listing .course-listing-extra-info .course-bundle {
-			font-size: 15px;
-			font-weight: 200;
-			line-height: 30px;
-		}
-	</style>
+    <style th:remove="all">
+        .jumbotron {
+            background: url('https://d2vvqscadf4c1f.cloudfront.net/rGIBmJUAT46UuLPwXo3K_Fedora_Core_Ultimate2.jpg') no-repeat center center;
+            height: 350px;
+            color: white;
+            text-shadow: #444 0 1px 1px;
+        }
+
+        body {
+            color: #2b3636;
+            font-family: "Proxima";
+        }
+
+        body {
+            color: #333;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.42857;
+        }
+
+        .row {
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+
+        *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        .view-directory .course-listing {
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        .course-listing {
+            background-color: #f7f7f7;
+            border: 1px solid #f1f3f0;
+            border-radius: 9px;
+            box-shadow: 0 1px #f1f3f0;
+            cursor: pointer;
+            height: 390px;
+            margin-bottom: 50px;
+            padding: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .course-listing .course-box-image-container {
+            max-height: 208px;
+            overflow: hidden;
+        }
+
+        .course-listing .course-box-image-container .course-box-image {
+            border-bottom: 1px solid #ededed;
+            border-top-left-radius: 9px;
+            border-top-right-radius: 9px;
+            display: block;
+            margin: auto;
+            width: 100%;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        img {
+            border: 0 none;
+        }
+
+        .course-listing .course-listing-title {
+            color: #6cb44a;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 25px;
+            max-height: 70px;
+            overflow: hidden;
+            padding: 16px 16px 4px;
+        }
+
+        .course-listing .course-listing-subtitle {
+            color: #586f6f;
+            font-size: 14px;
+            font-weight: 200;
+            max-height: 65px;
+            overflow: hidden;
+            padding: 5px 16px;
+        }
+
+        .course-listing .course-listing-extra-info .course-price {
+            color: #6eae50 !important;
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 34px;
+            padding-right: 10px;
+            text-align: right;
+        }
+
+        .course-listing .course-listing-extra-info .course-author-name {
+            font-size: 15px;
+            font-weight: 200;
+            line-height: 30px;
+            max-height: 30px;
+            overflow: hidden;
+            padding-left: 5px;
+        }
+
+        .course-listing .course-listing-extra-info .course-bundle {
+            font-size: 15px;
+            font-weight: 200;
+            line-height: 30px;
+        }
+    </style>
 </head>
 <body>
 
-	<div class="container">
+<div class="container">
 
-		<h2 class="row col-12 text-info justify-content-center">Checkout Form</h2>
+    <h2 class="row col-12 text-info justify-content-center">Checkout Form</h2>
 
-		<br>
+    <br>
 
-		<form class="form-horizontal"
-		      th:object="${checkoutCommand}"
-		      th:action="@{/docheckout}"
-		      method="post">
+    <form class="form-horizontal"
+          th:object="${checkoutCommand}"
+          th:action="@{/docheckout}"
+          method="post">
 
-			<!--
-			    #fields object:
-			      - #fields.hasErrors(...) function receives the field
-			        expression as a parameter,  like 'firstName' or '*', and
-			        returns a boolean telling whether any validation errors
-			        exist for that field or any field
-			-->
-			<div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
-				<div th:text="#{checkoutCommand.hasErrors}">Error Message</div>
-			</div>
+        <!--
+            #fields object:
+              - #fields.hasErrors(...) function receives the field
+                expression as a parameter,  like 'firstName' or '*', and
+                returns a boolean telling whether any validation errors
+                exist for that field or any field
+        -->
+        <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
+            <div th:text="#{checkoutCommand.hasErrors}">Error Message</div>
+        </div>
 
-			<div class="form-group" th:class="${#fields.hasErrors('firstName')} ?
+        <div class="form-group" th:class="${#fields.hasErrors('firstName')} ?
 			                                  'form-group has-error' : 'form-group'">
-				<label class="control-label">First Name:</label>
-				<!--
-				    th:field attributes must be selection expressions (*{...}),
-				    The asterisk syntax evaluates expressions on selected
-				    objects rather than on the whole context
+            <label class="control-label">First Name:</label>
+            <!--
+                th:field attributes must be selection expressions (*{...}),
+                The asterisk syntax evaluates expressions on selected
+                objects rather than on the whole context
 
-				    A selected object is the result of an expression using the
-				    th:object attribute, like th:object="${checkoutCommand}"
+                A selected object is the result of an expression using the
+                th:object attribute, like th:object="${checkoutCommand}"
 
-				    Setting a CSS class to a form input if that field has
-				    errors, is so common that Thymeleaf offers a specific
-				    attribute for doing exacly that: th:errorclass:
-                    Applied to a form field tag (input, select, textarea…), it
-                    will read the name of the field to be examined from any
-                    existing name or th:field attributes in the same tag, and
-                    then append the specified CSS class to the tag if such
-                    field has any associated errors
-				-->
-				<input type="text" class="form-control" th:field="*{firstName}"
-				       th:errorclass="is-invalid"/>
-				<span class="help-block invalid-feedback"
-				      th:if="${#fields.hasErrors('firstName')}">
+                Setting a CSS class to a form input if that field has
+                errors, is so common that Thymeleaf offers a specific
+                attribute for doing exacly that: th:errorclass:
+                Applied to a form field tag (input, select, textarea…), it
+                will read the name of the field to be examined from any
+                existing name or th:field attributes in the same tag, and
+                then append the specified CSS class to the tag if such
+                field has any associated errors
+            -->
+            <input type="text" class="form-control" th:field="*{firstName}"
+                   th:errorclass="is-invalid"/>
+            <span class="help-block invalid-feedback"
+                  th:if="${#fields.hasErrors('firstName')}">
 					<ul>
 						<div th:each="err : ${#fields.errors('firstName')}">
                             <li th:text="${err}">Error message</li>
 						</div>
 					</ul>
 				</span>
-			</div>
+        </div>
 
-			<div class="form-group" th:class="${#fields.hasErrors('lastName')} ?
+        <div class="form-group" th:class="${#fields.hasErrors('lastName')} ?
 			                                  'form-group has-error' : 'form-group'">
-				<label class="control-label">Last Name:</label>
-				<input type="text" class="form-control" th:field="*{lastName}"
-				       th:errorclass="is-invalid"/>
-				<span class="help-block invalid-feedback"
-				      th:if="${#fields.hasErrors('lastName')}">
+            <label class="control-label">Last Name:</label>
+            <input type="text" class="form-control" th:field="*{lastName}"
+                   th:errorclass="is-invalid"/>
+            <span class="help-block invalid-feedback"
+                  th:if="${#fields.hasErrors('lastName')}">
 					<ul>
 						<div th:each="err : ${#fields.errors('lastName')}">
                             <li th:text="${err}">Error message</li>
 						</div>
 					</ul>
 				</span>
-			</div>
+        </div>
 
-			<div class="form-group" th:class="${#fields.hasErrors('addressLine1')} ?
+        <div class="form-group" th:class="${#fields.hasErrors('addressLine1')} ?
 			                                  'form-group has-error' : 'form-group'">
-				<label class="control-label">Address Line 1:</label>
-				<input type="text" class="form-control" th:field="*{addressLine1}"
-				       th:errorclass="is-invalid"/>
-				<span class="help-block invalid-feedback"
-				      th:if="${#fields.hasErrors('addressLine1')}">
+            <label class="control-label">Address Line 1:</label>
+            <input type="text" class="form-control" th:field="*{addressLine1}"
+                   th:errorclass="is-invalid"/>
+            <span class="help-block invalid-feedback"
+                  th:if="${#fields.hasErrors('addressLine1')}">
 					<ul>
 						<div th:each="err : ${#fields.errors('addressLine1')}">
                             <li th:text="${err}">Error message</li>
 						</div>
 					</ul>
 				</span>
-			</div>
+        </div>
 
-			<div class="form-group">
-				<label class="control-label">Address Line 2:</label>
-				<input type="text" class="form-control" th:field="*{addressLine2}"/>
-			</div>
+        <div class="form-group">
+            <label class="control-label">Address Line 2:</label>
+            <input type="text" class="form-control" th:field="*{addressLine2}"/>
+        </div>
 
-			<div class="form-group" th:class="${#fields.hasErrors('city')} ?
+        <div class="form-group" th:class="${#fields.hasErrors('city')} ?
 			                                  'form-group has-error' : 'form-group'">
-				<label class="control-label">City:</label>
-				<input type="text" class="form-control" th:field="*{city}"
-				       th:errorclass="is-invalid"/>
-				<span class="help-block invalid-feedback"
-				      th:if="${#fields.hasErrors('city')}">
+            <label class="control-label">City:</label>
+            <input type="text" class="form-control" th:field="*{city}"
+                   th:errorclass="is-invalid"/>
+            <span class="help-block invalid-feedback"
+                  th:if="${#fields.hasErrors('city')}">
 					<ul>
 						<div th:each="err : ${#fields.errors('city')}">
                             <li th:text="${err}">Error message</li>
 						</div>
 					</ul>
 				</span>
-			</div>
+        </div>
 
- 	 		<div class="form-group" th:class="${#fields.hasErrors('stateCode')} ?
+        <div class="form-group" th:class="${#fields.hasErrors('stateCode')} ?
 			                                  'form-group has-error' : 'form-group'">
-				<label class="control-label">State Code:</label>
-				<input type="text" class="form-control" th:field="*{stateCode}"
-				       th:errorclass="is-invalid"/>
-				<span class="help-block invalid-feedback"
-				      th:if="${#fields.hasErrors('stateCode')}">
+            <label class="control-label">State Code:</label>
+            <input type="text" class="form-control" th:field="*{stateCode}"
+                   th:errorclass="is-invalid"/>
+            <span class="help-block invalid-feedback"
+                  th:if="${#fields.hasErrors('stateCode')}">
 					<ul>
 						<div th:each="err : ${#fields.errors('stateCode')}">
                             <li th:text="${err}">Error message</li>
 						</div>
 					</ul>
 				</span>
-			</div>
+        </div>
 
-			<div class="form-group" th:class="${#fields.hasErrors('zipCode')} ?
+        <div class="form-group" th:class="${#fields.hasErrors('zipCode')} ?
 			                                  'form-group has-error' : 'form-group'">
-				<label class="control-label">Zip Code:</label>
-				<input type="text" class="form-control" th:field="*{zipCode}"
-				       th:errorclass="is-invalid"/>
-				<span class="help-block invalid-feedback"
-				      th:if="${#fields.hasErrors('zipCode')}">
+            <label class="control-label">Zip Code:</label>
+            <input type="text" class="form-control" th:field="*{zipCode}"
+                   th:errorclass="is-invalid"/>
+            <span class="help-block invalid-feedback"
+                  th:if="${#fields.hasErrors('zipCode')}">
 					<ul>
 						<div th:each="err : ${#fields.errors('zipCode')}">
                             <li th:text="${err}">Error message</li>
 						</div>
 					</ul>
 				</span>
-			</div>
+        </div>
 
-			<br>
+        <br>
 
-			<div class="row col-12 justify-content-center">
-				<button type="submit" class="btn btn-default">Submit</button>
-			</div>
+        <div class="row col-12 justify-content-center">
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
 
-		</form>
+    </form>
 
-	</div>
+</div>
 
-	<!-- Bootstrap 4.1.1 -->
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="/webjars/jquery/3.3.1-1/jquery.min.js"></script>
+<!-- Bootstrap 4.1.1 -->
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="/webjars/jquery/3.3.1-1/jquery.min.js"></script>
 
-	<!-- Popper JS -->
-	<script src="/webjars/popper.js/1.14.3/dist/umd/popper.min.js"></script>
+<!-- Popper JS -->
+<script src="/webjars/popper.js/1.14.3/dist/umd/popper.min.js"></script>
 
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
-	        th:src="@{/js/bootstrap-4.1.1-dist/bootstrap.min.js}"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        th:src="@{/js/bootstrap-4.1.1-dist/bootstrap.min.js}"></script>
 
 </body>
 </html>

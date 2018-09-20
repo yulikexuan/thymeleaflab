@@ -14,17 +14,17 @@ import java.util.List;
 @Data
 public class Product {
 
-	private Long id;
-	private String courseName;
-	private String courseSubtitle;
-	private String courseDescription;
-	private Author author;
-	private BigDecimal price;
-	private List<ProductCategory> productCategories = new ArrayList<>();
-	private String imageUrl;
+    private Long id;
+    private String courseName;
+    private String courseSubtitle;
+    private String courseDescription;
+    private Author author;
+    private BigDecimal price;
+    private List<ProductCategory> productCategories = new ArrayList<>();
+    private String imageUrl;
 
-	public String getAuthorFullName() {
-		return this.author.getFullName();
-	}
+    public String getAuthorFullName() {
+        return this.author.getFullName();
+    }
 
 }///:~

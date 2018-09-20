@@ -17,21 +17,20 @@ import javax.validation.Valid;
 @Controller
 public class CheckoutController {
 
-	@RequestMapping("/checkout")
-	public String getCheckoutForm(Model model) {
-		model.addAttribute("checkoutCommand", new CheckoutCommand());
-		return "checkoutform";
-	}
+    @RequestMapping("/checkout")
+    public String getCheckoutForm(Model model) {
+        model.addAttribute("checkoutCommand", new CheckoutCommand());
+        return "checkoutform";
+    }
 
-	@RequestMapping(value = "/docheckout", method = RequestMethod.POST)
-	public String doCheckout(@Valid CheckoutCommand checkoutCommand,
-	                         BindingResult bindingResult) {
+    @RequestMapping(value = "/docheckout", method = RequestMethod.POST)
+    public String doCheckout(@Valid CheckoutCommand checkoutCommand, BindingResult bindingResult) {
 
-		if (bindingResult.hasErrors()) {
-			return "checkoutform";
-		}
+        if (bindingResult.hasErrors()) {
+            return "checkoutform";
+        }
 
-		return "checkoutcomplete";
-	}
+        return "checkoutcomplete";
+    }
 
 }///:~

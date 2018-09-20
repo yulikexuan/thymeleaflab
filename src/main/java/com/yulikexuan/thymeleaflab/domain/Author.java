@@ -10,13 +10,13 @@ import lombok.Data;
 @Data
 public class Author {
 
-	private Long id;
-	private String firstName;
-	private String lastName;
-	private String image;
+    private Long id;
+    private String firstName;
+    private String lastName;
+    private String image;
 
-	public String getFullName() {
-		return this.firstName + "" + this.lastName;
-	}
+    public String getFullName() {
+        return this.firstName + "" + this.lastName;
+    }
 
 }///:~

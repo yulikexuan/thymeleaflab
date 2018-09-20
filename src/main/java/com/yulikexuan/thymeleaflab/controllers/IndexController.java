@@ -14,23 +14,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
 
-	private final IProductService productService;
+    private final IProductService productService;
 
-	@Autowired
-	public IndexController(IProductService productService) {
-		this.productService = productService;
-	}
+    @Autowired
+    public IndexController(IProductService productService) {
+        this.productService = productService;
+    }
 
-	@RequestMapping({"/", "/index"})
-	public String getIndex(Model model) {
+    @RequestMapping({"/", "/index"})
+    public String getIndex(Model model) {
 
-		model.addAttribute("products", this.productService.getProducts());
-		return "index";
-	}
+        model.addAttribute("products", this.productService.getProducts());
+        return "index";
+    }
 
-	@RequestMapping("/secured")
-	public String secured(){
-		return "secured";
-	}
+    @RequestMapping("/secured")
+    public String secured() {
+        return "secured";
+    }
 
 }///:~

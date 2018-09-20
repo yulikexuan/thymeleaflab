@@ -13,27 +13,26 @@ import java.util.*;
 @Service
 public class ProductService implements IProductService {
 
-	private Map<Long, Product> productMap = new HashMap<>();
+    private Map<Long, Product> productMap = new HashMap<>();
 
-	@Override
-	public Product getProduct(Long id) {
-		return this.productMap.getOrDefault(id, new Product());
-	}
+    @Override
+    public Product getProduct(Long id) {
+        return this.productMap.getOrDefault(id, new Product());
+    }
 
-	@Override
-	public List<Product> getProducts() {
-		return Collections.unmodifiableList(
-				new ArrayList<>(this.productMap.values()));
-	}
+    @Override
+    public List<Product> getProducts() {
+        return Collections.unmodifiableList(new ArrayList<>(this.productMap.values()));
+    }
 
-	@Override
-	public int getProductCount() {
-		return this.productMap.size();
-	}
+    @Override
+    public int getProductCount() {
+        return this.productMap.size();
+    }
 
-	@Override
-	public void addProduct(Product product) {
-		this.productMap.put(product.getId(), product);
-	}
+    @Override
+    public void addProduct(Product product) {
+        this.productMap.put(product.getId(), product);
+    }
 
 }///:~

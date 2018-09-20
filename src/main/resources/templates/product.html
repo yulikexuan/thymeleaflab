@@ -1,203 +1,208 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="UTF-8">
-	<title th:text="#{index.page.title}">Product Page Title</title>
+    <meta charset="UTF-8">
+    <title th:text="#{index.page.title}">Product Page Title</title>
 
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet"
-	      href="../static/css/bootstrap-4.1.1-dist/bootstrap.min.css"
-	      th:href="@{/webjars/bootstrap/4.1.1/css/bootstrap.min.css}">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet"
+          href="../static/css/bootstrap-4.1.1-dist/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/4.1.1/css/bootstrap.min.css}">
 
-	<link rel="stylesheet" href="" th:href="@{/css/custom.css}" >
+    <link rel="stylesheet" href="" th:href="@{/css/custom.css}">
 
-	<style th:remove="all">
-		.jumbotron {
-			background: url('https://d2vvqscadf4c1f.cloudfront.net/rGIBmJUAT46UuLPwXo3K_Fedora_Core_Ultimate2.jpg') no-repeat center center;
-			height: 350px;
-			color: white;
-			text-shadow: #444 0 1px 1px;
-		}
+    <style th:remove="all">
+        .jumbotron {
+            background: url('https://d2vvqscadf4c1f.cloudfront.net/rGIBmJUAT46UuLPwXo3K_Fedora_Core_Ultimate2.jpg') no-repeat center center;
+            height: 350px;
+            color: white;
+            text-shadow: #444 0 1px 1px;
+        }
 
-		body {
-			color: #2b3636;
-			font-family: "Proxima";
-		}
+        body {
+            color: #2b3636;
+            font-family: "Proxima";
+        }
 
-		body {
-			color: #333;
-			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-			font-size: 14px;
-			line-height: 1.42857;
-		}
+        body {
+            color: #333;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.42857;
+        }
 
-		.row {
-			margin-left: -15px;
-			margin-right: -15px;
-		}
+        .row {
+            margin-left: -15px;
+            margin-right: -15px;
+        }
 
-		*::before, *::after {
-			box-sizing: border-box;
-		}
+        *::before, *::after {
+            box-sizing: border-box;
+        }
 
-		*::before, *::after {
-			box-sizing: border-box;
-		}
+        *::before, *::after {
+            box-sizing: border-box;
+        }
 
-		.view-directory .course-listing {
-			background-color: rgba(255, 255, 255, 0.7);
-		}
+        .view-directory .course-listing {
+            background-color: rgba(255, 255, 255, 0.7);
+        }
 
-		.course-listing {
-			background-color: #f7f7f7;
-			border: 1px solid #f1f3f0;
-			border-radius: 9px;
-			box-shadow: 0 1px #f1f3f0;
-			cursor: pointer;
-			height: 390px;
-			margin-bottom: 50px;
-			padding: 0;
-		}
+        .course-listing {
+            background-color: #f7f7f7;
+            border: 1px solid #f1f3f0;
+            border-radius: 9px;
+            box-shadow: 0 1px #f1f3f0;
+            cursor: pointer;
+            height: 390px;
+            margin-bottom: 50px;
+            padding: 0;
+        }
 
-		* {
-			box-sizing: border-box;
-		}
+        * {
+            box-sizing: border-box;
+        }
 
-		.course-listing .course-box-image-container {
-			max-height: 208px;
-			overflow: hidden;
-		}
+        .course-listing .course-box-image-container {
+            max-height: 208px;
+            overflow: hidden;
+        }
 
-		.course-listing .course-box-image-container .course-box-image {
-			border-bottom: 1px solid #ededed;
-			border-top-left-radius: 9px;
-			border-top-right-radius: 9px;
-			display: block;
-			margin: auto;
-			width: 100%;
-		}
+        .course-listing .course-box-image-container .course-box-image {
+            border-bottom: 1px solid #ededed;
+            border-top-left-radius: 9px;
+            border-top-right-radius: 9px;
+            display: block;
+            margin: auto;
+            width: 100%;
+        }
 
-		img {
-			vertical-align: middle;
-		}
+        img {
+            vertical-align: middle;
+        }
 
-		img {
-			border: 0 none;
-		}
+        img {
+            border: 0 none;
+        }
 
-		.course-listing .course-listing-title {
-			color: #6cb44a;
-			font-size: 18px;
-			font-weight: bold;
-			line-height: 25px;
-			max-height: 70px;
-			overflow: hidden;
-			padding: 16px 16px 4px;
-		}
+        .course-listing .course-listing-title {
+            color: #6cb44a;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 25px;
+            max-height: 70px;
+            overflow: hidden;
+            padding: 16px 16px 4px;
+        }
 
-		.course-listing .course-listing-subtitle {
-			color: #586f6f;
-			font-size: 14px;
-			font-weight: 200;
-			max-height: 65px;
-			overflow: hidden;
-			padding: 5px 16px;
-		}
+        .course-listing .course-listing-subtitle {
+            color: #586f6f;
+            font-size: 14px;
+            font-weight: 200;
+            max-height: 65px;
+            overflow: hidden;
+            padding: 5px 16px;
+        }
 
-		.course-listing .course-listing-extra-info .course-price {
-			color: #6eae50 !important;
-			font-size: 15px;
-			font-weight: bold;
-			line-height: 34px;
-			padding-right: 10px;
-			text-align: right;
-		}
+        .course-listing .course-listing-extra-info .course-price {
+            color: #6eae50 !important;
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 34px;
+            padding-right: 10px;
+            text-align: right;
+        }
 
-		.course-listing .course-listing-extra-info .course-author-name {
-			font-size: 15px;
-			font-weight: 200;
-			line-height: 30px;
-			max-height: 30px;
-			overflow: hidden;
-			padding-left: 5px;
-		}
+        .course-listing .course-listing-extra-info .course-author-name {
+            font-size: 15px;
+            font-weight: 200;
+            line-height: 30px;
+            max-height: 30px;
+            overflow: hidden;
+            padding-left: 5px;
+        }
 
-		.course-listing .course-listing-extra-info .course-bundle {
-			font-size: 15px;
-			font-weight: 200;
-			line-height: 30px;
-		}
-	</style>
+        .course-listing .course-listing-extra-info .course-bundle {
+            font-size: 15px;
+            font-weight: 200;
+            line-height: 30px;
+        }
+    </style>
 
 </head>
 <body>
 
 <div class="container" th:replace="fragments/jumbotron :: jumbotron">
-	<div class="jumbotron">
-		<h1>Spring Framework Guru</h1>
-		<p class="lead" th:text="#{index.courses.tagline}">Tag Line</p>
-	</div>
+    <div class="jumbotron">
+        <h1>Spring Framework Guru</h1>
+        <p class="lead" th:text="#{index.courses.tagline}">Tag Line</p>
+    </div>
 </div>
 
 <div class="container">
 
-	<div class="row">
-		<div class="col">
-			<h1 th:text="${product.courseName}">Course Name</h1>
-		</div>
-	</div>
+    <div class="row">
+        <div class="col">
+            <h1 th:text="${product.courseName}">Course Name</h1>
+        </div>
+    </div>
 
-	<div class="row course-listing">
-		<div class="col">
-			<div th:replace="fragments/productdiv :: productdiv">
-			</div>
-			<div class="container">
-				<div class="row">
-					<ol class="breadcrumb" th:each="category:${product.productCategories}">
-						<li><a th:text="${category.category}" href="#">Cat 1</a></li>
-						<li><a href="#" th:remove="all">Cat 2</a></li>
-						<li><a href="#" th:remove="all">Cat 3</a></li>
-					</ol>
-				</div>
-			</div>
-		</div>
-		<div class="col">
-			<div>
-				<h2 th:text="${product.courseSubtitle}">Course Subtitle</h2>
-				<p th:text="${product.courseDescription}">Adipiscing magna vestibulum fringilla tristique ad a primis
-					ante mi inceptos condimentum curabitur
-					curabitur eu sed nullam ridiculus nunc montes id nostra dui
-					inceptos scelerisque posuere ipsum mus.
-					A scelerisque libero viverra eu condimentum mollis suscipit
-					mi consectetur semper dis ipsum nisi
-					in nullam aliquet iaculis in eros euismod bibendum.
-					Adipiscing volutpat fringilla bibendum duis a
-					maecenas eu lorem accumsan fames sem faucibus ad mauris
-					aliquam nam. Torquent amet adipiscing fusce
-					fringilla venenatis tristique scelerisque natoque malesuada
-					nostra duis nam augue ridiculus
-					pulvinar ultrices laoreet in condimentum justo id. Nascetur
-					condimentum maecenas magna metus curae
-					est odio ad dui fames quam a aenean consequat faucibus
-					nostra lorem adipiscing vestibulum
-					ullamcorper etiam consectetur. </p>
-			</div>
-		</div>
-	</div>
+    <div class="row course-listing">
+        <div class="col">
+            <div th:replace="fragments/productdiv :: productdiv">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <ol class="breadcrumb"
+                        th:each="category:${product.productCategories}">
+                        <li><a th:text="${category.category}" href="#">Cat 1</a>
+                        </li>
+                        <li><a href="#" th:remove="all">Cat 2</a></li>
+                        <li><a href="#" th:remove="all">Cat 3</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div>
+                <h2 th:text="${product.courseSubtitle}">Course Subtitle</h2>
+                <p th:text="${product.courseDescription}">Adipiscing magna
+                    vestibulum fringilla tristique ad a primis
+                    ante mi inceptos condimentum curabitur
+                    curabitur eu sed nullam ridiculus nunc montes id nostra dui
+                    inceptos scelerisque posuere ipsum mus.
+                    A scelerisque libero viverra eu condimentum mollis suscipit
+                    mi consectetur semper dis ipsum nisi
+                    in nullam aliquet iaculis in eros euismod bibendum.
+                    Adipiscing volutpat fringilla bibendum duis a
+                    maecenas eu lorem accumsan fames sem faucibus ad mauris
+                    aliquam nam. Torquent amet adipiscing fusce
+                    fringilla venenatis tristique scelerisque natoque malesuada
+                    nostra duis nam augue ridiculus
+                    pulvinar ultrices laoreet in condimentum justo id. Nascetur
+                    condimentum maecenas magna metus curae
+                    est odio ad dui fames quam a aenean consequat faucibus
+                    nostra lorem adipiscing vestibulum
+                    ullamcorper etiam consectetur. </p>
+            </div>
+        </div>
+    </div>
 
-	<div class="row">
-		<div class="col-4 offset-4">
-			<button class="btn-success" style="margin:0 auto;" th:text="#{product.btn.buynow}">Buy Now!</button>
-		</div>
-	</div>
+    <div class="row">
+        <div class="col-4 offset-4">
+            <button class="btn-success" style="margin:0 auto;"
+                    th:text="#{product.btn.buynow}">Buy Now!
+            </button>
+        </div>
+    </div>
 </div>
 
 <div class="container" th:replace="fragments/jumbotron :: footer">
-	<nav class="navbar navbar-expand-sm fixed-bottom justify-content-center">
-		<div class="navbar-nav">
-			<div class="navbar-item">Page Footer</div>
-		</div>
-	</nav>
+    <nav class="navbar navbar-expand-sm fixed-bottom justify-content-center">
+        <div class="navbar-nav">
+            <div class="navbar-item">Page Footer</div>
+        </div>
+    </nav>
 </div>
 
 <!-- Bootstrap 4.1.1 Setup --------------------------------------------------->

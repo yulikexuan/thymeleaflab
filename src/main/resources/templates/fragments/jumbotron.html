@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="UTF-8">
-	<title th:text="#{index.page.title}">Page Title</title>
+    <meta charset="UTF-8">
+    <title th:text="#{index.page.title}">Page Title</title>
 
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="../../static/css/bootstrap-4.1.1-dist/bootstrap.min.css"
-	      th:href="@{/css/bootstrap-4.1.1-dist/bootstrap.min.css}">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet"
+          href="../../static/css/bootstrap-4.1.1-dist/bootstrap.min.css"
+          th:href="@{/css/bootstrap-4.1.1-dist/bootstrap.min.css}">
 
-	<link rel="stylesheet" href="" th:href="@{/css/custom.css}" >
+    <link rel="stylesheet" href="" th:href="@{/css/custom.css}">
 </head>
 <body>
 
 <div class="container" th:fragment="jumbotron">
     <div class="jumbotron">
-		<h1 th:text="#{index.page.title}">Jumbotron Fragment</h1>
-		<p class="lead" th:text="#{index.courses.tagline}">Tag line</p>
-	</div>
+        <h1 th:text="#{index.page.title}">Jumbotron Fragment</h1>
+        <p class="lead" th:text="#{index.courses.tagline}">Tag line</p>
+    </div>
 </div>
 
 <div class="container" th:fragment="footer">
-	<nav class="navbar navbar-expand-sm fixed-bottom justify-content-center">
-		<div class="navbar-nav">
-			<div class="navbar-item">© 2018 - Spring Framework Guru for Thymeleaf</div>
-		</div>
-	</nav>
+    <nav class="navbar navbar-expand-sm fixed-bottom justify-content-center">
+        <div class="navbar-nav">
+            <div class="navbar-item">© 2018 - Spring Framework Guru for
+                Thymeleaf
+            </div>
+        </div>
+    </nav>
 </div>
 
 <!-- Bootstrap 4.1.1 -->

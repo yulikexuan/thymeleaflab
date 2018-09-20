@@ -18,25 +18,23 @@ import java.util.Locale;
 @Configuration
 public class SpringMvcConfiguration implements WebMvcConfigurer {
 
-	@Bean
-	public LocaleResolver localeResolver() {
-		SessionLocaleResolver sessionLocaleResolver =
-				new SessionLocaleResolver();
-		sessionLocaleResolver.setDefaultLocale(Locale.US);
-		return sessionLocaleResolver;
-	}
+    @Bean
+    public LocaleResolver localeResolver() {
+        SessionLocaleResolver sessionLocaleResolver = new SessionLocaleResolver();
+        sessionLocaleResolver.setDefaultLocale(Locale.US);
+        return sessionLocaleResolver;
+    }
 
-	@Bean
-	LocaleChangeInterceptor localeChangeInterceptor() {
-		LocaleChangeInterceptor localeChangeInterceptor =
-				new LocaleChangeInterceptor();
-		localeChangeInterceptor.setParamName("lang");
-		return localeChangeInterceptor;
-	}
+    @Bean
+    LocaleChangeInterceptor localeChangeInterceptor() {
+        LocaleChangeInterceptor localeChangeInterceptor = new LocaleChangeInterceptor();
+        localeChangeInterceptor.setParamName("lang");
+        return localeChangeInterceptor;
+    }
 
-	@Override
-	public void addInterceptors(InterceptorRegistry registry) {
-		registry.addInterceptor(localeChangeInterceptor());
-	}
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(localeChangeInterceptor());
+    }
 
 }///:~
